@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+
+    <changeSet id="2" author="marquis">
+        <createTable tableName="books">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="title" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="author_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="genre" type="VARCHAR(100)"/>
+            <column name="published_year" type="INTEGER"/>
+            <column name="isbn" type="VARCHAR(20)"/>
+            <column name="available_copies" type="INTEGER" defaultValue="1"/>
+        </createTable>
+        <addForeignKeyConstraint constraintName="fk_book_author"
+                                 baseTableName="books"
+                                 baseColumnNames="author_id"
+                                 referencedTableName="authors"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+
+</databaseChangeLog>

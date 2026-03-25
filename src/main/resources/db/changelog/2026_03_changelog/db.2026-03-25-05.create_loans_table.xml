@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+
+    <changeSet id="5" author="marquis">
+        <createTable tableName="loans">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="book_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="reader_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="loan_date" type="DATE" defaultValueDate="CURRENT_DATE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="due_date" type="DATE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="return_date" type="DATE"/>
+            <column name="status_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <addForeignKeyConstraint constraintName="fk_loan_book"
+                                 baseTableName="loans"
+                                 baseColumnNames="book_id"
+                                 referencedTableName="books"
+                                 referencedColumnNames="id"/>
+        <addForeignKeyConstraint constraintName="fk_loan_reader"
+                                 baseTableName="loans"
+                                 baseColumnNames="reader_id"
+                                 referencedTableName="readers"
+                                 referencedColumnNames="id"/>
+        <addForeignKeyConstraint constraintName="fk_loan_status"
+                                 baseTableName="loans"
+                                 baseColumnNames="status_id"
+                                 referencedTableName="loan_statuses"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+
+</databaseChangeLog>

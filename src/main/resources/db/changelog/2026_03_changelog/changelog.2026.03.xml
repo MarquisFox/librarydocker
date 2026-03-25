@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+
+    <include file="db.2026-03-25-01.create_authors_table.xml" relativeToChangelogFile="true"/>
+    <include file="db.2026-03-25-02.create_books_table.xml" relativeToChangelogFile="true"/>
+    <include file="db.2026-03-25-03.create_readers_table.xml" relativeToChangelogFile="true"/>
+    <include file="db.2026-03-25-04.create_loan_statuses_table.xml" relativeToChangelogFile="true"/>
+    <include file="db.2026-03-25-05.create_loans_table.xml" relativeToChangelogFile="true"/>
+    <include file="db.2026-03-25-06.insert_initial_data.xml" relativeToChangelogFile="true"/>
+
+</databaseChangeLog>

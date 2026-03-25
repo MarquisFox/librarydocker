@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+
+    <changeSet id="6" author="marquis">
+        <insert tableName="loan_statuses">
+            <column name="name" value="ACTIVE"/>
+            <column name="description" value="Книга выдана и находится у читателя"/>
+        </insert>
+        <insert tableName="loan_statuses">
+            <column name="name" value="RETURNED"/>
+            <column name="description" value="Книга возвращена"/>
+        </insert>
+        <insert tableName="loan_statuses">
+            <column name="name" value="OVERDUE"/>
+            <column name="description" value="Просрочена"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
