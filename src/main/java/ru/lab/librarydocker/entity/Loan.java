@@ -9,9 +9,11 @@ public class Loan {
     private LocalDate loanDate;
     private LocalDate dueDate;
     private LocalDate returnDate;
-    private Long statusId;;
+    private Long statusId;
+    ;
 
-    public Loan() {}
+    public Loan() {
+    }
 
     public Loan(Long bookId, Long readerId, LocalDate loanDate, LocalDate dueDate, Long statusId) {
         this.bookId = bookId;
@@ -21,24 +23,59 @@ public class Loan {
         this.statusId = statusId;
     }
 
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
+    public Long getId() {
+        return id;
+    }
 
-    public Long getBookId() { return bookId; }
-    public void setBookId(Long bookId) { this.bookId = bookId; }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-    public Long getReaderId() { return readerId; }
-    public void setReaderId(Long readerId) { this.readerId = readerId; }
+    public Long getBookId() {
+        return bookId;
+    }
 
-    public LocalDate getLoanDate() { return loanDate; }
-    public void setLoanDate(LocalDate loanDate) { this.loanDate = loanDate; }
+    public void setBookId(Long bookId) {
+        this.bookId = bookId;
+    }
 
-    public LocalDate getDueDate() { return dueDate; }
-    public void setDueDate(LocalDate dueDate) { this.dueDate = dueDate; }
+    public Long getReaderId() {
+        return readerId;
+    }
 
-    public LocalDate getReturnDate() { return returnDate; }
-    public void setReturnDate(LocalDate returnDate) { this.returnDate = returnDate; }
+    public void setReaderId(Long readerId) {
+        this.readerId = readerId;
+    }
 
-    public Long getStatusId() { return statusId; }
-    public void setStatusId(Long status) { this.statusId = status; }
+    public LocalDate getLoanDate() {
+        return loanDate;
+    }
+
+    public void setLoanDate(LocalDate loanDate) {
+        this.loanDate = loanDate;
+    }
+
+    public LocalDate getDueDate() {
+        return dueDate;
+    }
+
+    public void setDueDate(LocalDate dueDate) {
+        this.dueDate = dueDate;
+    }
+
+    public LocalDate getReturnDate() {
+        return returnDate;
+    }
+
+    public void setReturnDate(LocalDate returnDate) {
+        this.returnDate = returnDate;
+    }
+
+    public Long getStatusId() {
+        return statusId;
+    }
+
+    public void setStatusId(Long status) {
+        this.statusId = status;
+    }
 }

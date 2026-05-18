@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class LibrarydockerApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(LibrarydockerApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(LibrarydockerApplication.class, args);
+    }
 
 }

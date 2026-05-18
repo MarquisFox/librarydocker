@@ -9,7 +9,8 @@ public class Book {
     private String isbn;
     private Integer availableCopies;
 
-    public Book() {}
+    public Book() {
+    }
 
     public Book(String title, Long authorId, String genre, Integer publishedYear, String isbn, Integer availableCopies) {
         this.title = title;
@@ -20,24 +21,59 @@ public class Book {
         this.availableCopies = availableCopies;
     }
 
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
+    public Long getId() {
+        return id;
+    }
 
-    public String getTitle() { return title; }
-    public void setTitle(String title) { this.title = title; }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-    public Long getAuthorId() { return authorId; }
-    public void setAuthorId(Long authorId) { this.authorId = authorId; }
+    public String getTitle() {
+        return title;
+    }
 
-    public String getGenre() { return genre; }
-    public void setGenre(String genre) { this.genre = genre; }
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
-    public Integer getPublishedYear() { return publishedYear; }
-    public void setPublishedYear(Integer publishedYear) { this.publishedYear = publishedYear; }
+    public Long getAuthorId() {
+        return authorId;
+    }
 
-    public String getIsbn() { return isbn; }
-    public void setIsbn(String isbn) { this.isbn = isbn; }
+    public void setAuthorId(Long authorId) {
+        this.authorId = authorId;
+    }
 
-    public Integer getAvailableCopies() { return availableCopies; }
-    public void setAvailableCopies(Integer availableCopies) { this.availableCopies = availableCopies; }
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
+    public Integer getPublishedYear() {
+        return publishedYear;
+    }
+
+    public void setPublishedYear(Integer publishedYear) {
+        this.publishedYear = publishedYear;
+    }
+
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
+
+    public Integer getAvailableCopies() {
+        return availableCopies;
+    }
+
+    public void setAvailableCopies(Integer availableCopies) {
+        this.availableCopies = availableCopies;
+    }
 }

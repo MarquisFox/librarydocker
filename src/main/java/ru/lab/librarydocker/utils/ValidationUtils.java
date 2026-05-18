@@ -11,10 +11,15 @@ public final class ValidationUtils {
         if (isbn == null || isbn.isBlank()) {
             return;
         }
-        String isbnRegex = "^(97[8-9])?[0-9]{9,13}$";
-        if (!isbn.matches(isbnRegex)) {
-            throw new BusinessException("Invalid ISBN format. Must be 10 or 13 digits, optionally starting with 978 or 979.");
+
+        String clean = isbn.replaceAll("[-\\s]", "");
+        if (clean.matches("\\d{10}")) {
+            return;
         }
+        if (clean.matches("978\\d{10}|979\\d{10}")) {
+            return;
+        }
+        throw new BusinessException("Invalid ISBN format. Must be 10 digits or 13 digits starting with 978 or 979.");
     }
 
 
