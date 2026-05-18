@@ -17,7 +17,6 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
-    restart: unless-stopped
 
   app:
     build: .
@@ -25,16 +24,15 @@ services:
     ports:
       - "8080:8080"
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/${DB_NAME}
+      SPRING_DATASOURCE_URL: ${POSTGRES_URL}/${DB_NAME}
       SPRING_DATASOURCE_USERNAME: ${DB_USER}
       SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD}
-      SPRING_LIQUIBASE_ENABLED: "true"
+      SPRING_LIQUIBASE_ENABLED: ${SPRING_LIQUIBASE_ENABLED}
     depends_on:
       db:
         condition: service_healthy
     networks:
       - library-network
-    restart: unless-stopped
 
 networks:
   library-network:
