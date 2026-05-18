@@ -7,7 +7,8 @@ import ru.lab.librarydocker.entity.Book;
 
 public final class BookDtoMapper {
 
-    private BookDtoMapper() {}
+    private BookDtoMapper() {
+    }
 
     public static Book toEntity(BookCreateRequest request) {
         Book book = new Book();

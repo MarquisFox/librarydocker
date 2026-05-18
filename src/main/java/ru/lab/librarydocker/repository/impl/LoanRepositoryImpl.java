@@ -63,7 +63,7 @@ public class LoanRepositoryImpl implements LoanRepository {
                 throw new BusinessException("Failed to generate loan ID");
             }
             loan.setId(key.longValue());
-        }else {
+        } else {
             String sql = "UPDATE loans SET book_id = ?, reader_id = ?, loan_date = ?, due_date = ?, return_date = ?, status_id = ? " +
                     "WHERE id = ?";
             jdbcTemplate.update(sql,
@@ -95,43 +95,43 @@ public class LoanRepositoryImpl implements LoanRepository {
     @Override
     public List<LoanResponse> findAllWithDetails() {
         String sql = """
-            SELECT l.id AS loan_id,
-                   l.book_id,
-                   b.title AS book_title,
-                   l.reader_id,
-                   CONCAT(r.first_name, ' ', r.last_name) AS reader_full_name,
-                   l.loan_date,
-                   l.due_date,
-                   l.return_date,
-                   l.status_id,
-                   s.name AS status_name
-            FROM loans l
-            JOIN books b ON l.book_id = b.id
-            JOIN readers r ON l.reader_id = r.id
-            JOIN loan_statuses s ON l.status_id = s.id
-            """;
+                SELECT l.id AS loan_id,
+                       l.book_id,
+                       b.title AS book_title,
+                       l.reader_id,
+                       CONCAT(r.first_name, ' ', r.last_name) AS reader_full_name,
+                       l.loan_date,
+                       l.due_date,
+                       l.return_date,
+                       l.status_id,
+                       s.name AS status_name
+                FROM loans l
+                JOIN books b ON l.book_id = b.id
+                JOIN readers r ON l.reader_id = r.id
+                JOIN loan_statuses s ON l.status_id = s.id
+                """;
         return jdbcTemplate.query(sql, loanWithDetailsMapper);
     }
 
     @Override
     public Optional<LoanResponse> findByIdWithDetails(Long id) {
         String sql = """
-            SELECT l.id AS loan_id,
-                   l.book_id,
-                   b.title AS book_title,
-                   l.reader_id,
-                   CONCAT(r.first_name, ' ', r.last_name) AS reader_full_name,
-                   l.loan_date,
-                   l.due_date,
-                   l.return_date,
-                   l.status_id,
-                   s.name AS status_name
-            FROM loans l
-            JOIN books b ON l.book_id = b.id
-            JOIN readers r ON l.reader_id = r.id
-            JOIN loan_statuses s ON l.status_id = s.id
-            WHERE l.id = ?
-            """;
+                SELECT l.id AS loan_id,
+                       l.book_id,
+                       b.title AS book_title,
+                       l.reader_id,
+                       CONCAT(r.first_name, ' ', r.last_name) AS reader_full_name,
+                       l.loan_date,
+                       l.due_date,
+                       l.return_date,
+                       l.status_id,
+                       s.name AS status_name
+                FROM loans l
+                JOIN books b ON l.book_id = b.id
+                JOIN readers r ON l.reader_id = r.id
+                JOIN loan_statuses s ON l.status_id = s.id
+                WHERE l.id = ?
+                """;
         List<LoanResponse> results = jdbcTemplate.query(sql, loanWithDetailsMapper, id);
         return results.stream().findFirst();
     }
@@ -139,44 +139,44 @@ public class LoanRepositoryImpl implements LoanRepository {
     @Override
     public List<LoanResponse> findByReaderIdWithDetails(Long readerId) {
         String sql = """
-            SELECT l.id AS loan_id,
-                   l.book_id,
-                   b.title AS book_title,
-                   l.reader_id,
-                   CONCAT(r.first_name, ' ', r.last_name) AS reader_full_name,
-                   l.loan_date,
-                   l.due_date,
-                   l.return_date,
-                   l.status_id,
-                   s.name AS status_name
-            FROM loans l
-            JOIN books b ON l.book_id = b.id
-            JOIN readers r ON l.reader_id = r.id
-            JOIN loan_statuses s ON l.status_id = s.id
-            WHERE l.reader_id = ?
-            """;
+                SELECT l.id AS loan_id,
+                       l.book_id,
+                       b.title AS book_title,
+                       l.reader_id,
+                       CONCAT(r.first_name, ' ', r.last_name) AS reader_full_name,
+                       l.loan_date,
+                       l.due_date,
+                       l.return_date,
+                       l.status_id,
+                       s.name AS status_name
+                FROM loans l
+                JOIN books b ON l.book_id = b.id
+                JOIN readers r ON l.reader_id = r.id
+                JOIN loan_statuses s ON l.status_id = s.id
+                WHERE l.reader_id = ?
+                """;
         return jdbcTemplate.query(sql, loanWithDetailsMapper, readerId);
     }
 
     @Override
     public List<LoanResponse> findByBookIdWithDetails(Long bookId) {
         String sql = """
-            SELECT l.id AS loan_id,
-                   l.book_id,
-                   b.title AS book_title,
-                   l.reader_id,
-                   CONCAT(r.first_name, ' ', r.last_name) AS reader_full_name,
-                   l.loan_date,
-                   l.due_date,
-                   l.return_date,
-                   l.status_id,
-                   s.name AS status_name
-            FROM loans l
-            JOIN books b ON l.book_id = b.id
-            JOIN readers r ON l.reader_id = r.id
-            JOIN loan_statuses s ON l.status_id = s.id
-            WHERE l.book_id = ?
-            """;
+                SELECT l.id AS loan_id,
+                       l.book_id,
+                       b.title AS book_title,
+                       l.reader_id,
+                       CONCAT(r.first_name, ' ', r.last_name) AS reader_full_name,
+                       l.loan_date,
+                       l.due_date,
+                       l.return_date,
+                       l.status_id,
+                       s.name AS status_name
+                FROM loans l
+                JOIN books b ON l.book_id = b.id
+                JOIN readers r ON l.reader_id = r.id
+                JOIN loan_statuses s ON l.status_id = s.id
+                WHERE l.book_id = ?
+                """;
         return jdbcTemplate.query(sql, loanWithDetailsMapper, bookId);
     }
 }

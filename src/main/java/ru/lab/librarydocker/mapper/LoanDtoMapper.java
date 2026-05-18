@@ -5,7 +5,8 @@ import ru.lab.librarydocker.entity.Loan;
 
 public final class LoanDtoMapper {
 
-    private LoanDtoMapper() {}
+    private LoanDtoMapper() {
+    }
 
     public static LoanResponse toResponse(Loan loan) {
         LoanResponse response = new LoanResponse();

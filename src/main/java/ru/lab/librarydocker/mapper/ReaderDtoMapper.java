@@ -9,7 +9,8 @@ import java.time.LocalDate;
 
 public final class ReaderDtoMapper {
 
-    private ReaderDtoMapper() {}
+    private ReaderDtoMapper() {
+    }
 
     public static Reader toEntity(ReaderCreateRequest request) {
         Reader reader = new Reader();

@@ -1,4 +1,5 @@
 package ru.lab.librarydocker.mapper;
+
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
 import ru.lab.librarydocker.entity.Author;

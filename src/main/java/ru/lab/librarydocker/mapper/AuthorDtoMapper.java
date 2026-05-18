@@ -7,7 +7,8 @@ import ru.lab.librarydocker.entity.Author;
 
 public final class AuthorDtoMapper {
 
-    private AuthorDtoMapper() {}
+    private AuthorDtoMapper() {
+    }
 
     public static Author toEntity(AuthorCreateRequest request) {
         Author author = new Author();

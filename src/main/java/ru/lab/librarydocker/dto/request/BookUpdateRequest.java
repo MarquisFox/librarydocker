@@ -15,8 +15,7 @@ public class BookUpdateRequest {
     @Max(2025)
     private Integer publishedYear;
 
-    @Pattern(regexp = "^(97[8-9]|97[8-9]?[0-9]{10}|[0-9]{9,13})$",
-            message = "Invalid ISBN format")
+    @Pattern(regexp = "^(97[8-9]|97[8-9]?[0-9]{10}|[0-9]{9,13})$", message = "Invalid ISBN format")
     private String isbn;
 
     @Min(0)
@@ -54,13 +53,11 @@ public class BookUpdateRequest {
         this.publishedYear = publishedYear;
     }
 
-    public @Pattern(regexp = "^(97[8-9]|97[8-9]?[0-9]{10}|[0-9]{9,13})$",
-            message = "Invalid ISBN format") String getIsbn() {
+    public @Pattern(regexp = "^(97[8-9]|97[8-9]?[0-9]{10}|[0-9]{9,13})$", message = "Invalid ISBN format") String getIsbn() {
         return isbn;
     }
 
-    public void setIsbn(@Pattern(regexp = "^(97[8-9]|97[8-9]?[0-9]{10}|[0-9]{9,13})$",
-            message = "Invalid ISBN format") String isbn) {
+    public void setIsbn(@Pattern(regexp = "^(97[8-9]|97[8-9]?[0-9]{10}|[0-9]{9,13})$", message = "Invalid ISBN format") String isbn) {
         this.isbn = isbn;
     }
 
