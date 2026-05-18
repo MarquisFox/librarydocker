@@ -27,3 +27,4 @@ Swagger UI: http://localhost:8080/swagger-ui.html
 [![CI/CD Pipeline](https://github.com/MarquisFox/librarydocker/actions/workflows/ci.yml/badge.svg)](https://github.com/MarquisFox/librarydocker/actions/workflows/ci.yml)
 
 Покрытие:
+[![CI/CD Pipeline](https://github.com/MarquisFox/librarydocker/actions/workflows/ci.yml/badge.svg)](https://github.com/MarquisFox/librarydocker/actions/workflows/ci.yml)
