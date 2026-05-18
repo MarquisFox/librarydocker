@@ -105,14 +105,14 @@
 				<groupId>io.spring.javaformat</groupId>
 				<artifactId>spring-javaformat-maven-plugin</artifactId>
 				<version>0.0.43</version>
-				<executions>
+				<!-- <executions>
 					<execution>
 						<goals>
 							<goal>apply</goal>
 						</goals>
 						<phase>validate</phase>
 					</execution>
-				</executions>
+				</executions> -->
 			</plugin>
 
 			<plugin>
