@@ -1,7 +1,6 @@
 package ru.lab.librarydocker.dto.request;
 
 import jakarta.validation.constraints.*;
-import java.time.LocalDate;
 
 public class BookCreateRequest {
     @NotBlank(message = "Title is required")
