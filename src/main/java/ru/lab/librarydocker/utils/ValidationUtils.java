@@ -5,7 +5,8 @@ import ru.lab.librarydocker.exception.BusinessException;
 
 public final class ValidationUtils {
 
-    private ValidationUtils() {}
+    private ValidationUtils() {
+    }
 
     public static void validateIsbn(String isbn) {
         if (isbn == null || isbn.isBlank()) {

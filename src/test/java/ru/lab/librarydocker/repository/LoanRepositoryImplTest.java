@@ -10,7 +10,6 @@ import ru.lab.librarydocker.dto.response.LoanResponse;
 import ru.lab.librarydocker.entity.Loan;
 import ru.lab.librarydocker.mapper.LoanMapper;
 import ru.lab.librarydocker.mapper.LoanWithDetailsMapper;
-import ru.lab.librarydocker.repository.BaseRepositoryTest;
 import ru.lab.librarydocker.repository.impl.LoanRepositoryImpl;
 
 import java.time.LocalDate;
@@ -31,14 +30,12 @@ class LoanRepositoryImplTest extends BaseRepositoryTest {
 
     @BeforeEach
     void setUp() {
-        // Очистка таблиц в правильном порядке (сначала дочерние, потом родительские)
         jdbcTemplate.execute("DELETE FROM loans");
         jdbcTemplate.execute("DELETE FROM books");
         jdbcTemplate.execute("DELETE FROM readers");
         jdbcTemplate.execute("DELETE FROM loan_statuses");
         jdbcTemplate.execute("DELETE FROM authors");
 
-        // Вставка родительских записей (автор, статусы, книга, читатель)
         jdbcTemplate.update("INSERT INTO authors (id, name) VALUES (1, 'Author1')");
         jdbcTemplate.update("INSERT INTO loan_statuses (id, name) VALUES (1, 'ACTIVE'), (2, 'RETURNED')");
         jdbcTemplate.update("INSERT INTO books (id, title, author_id) VALUES (10, 'Book1', 1)");

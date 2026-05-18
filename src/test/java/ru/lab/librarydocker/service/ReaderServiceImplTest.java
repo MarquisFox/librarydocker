@@ -12,9 +12,7 @@ import ru.lab.librarydocker.entity.Reader;
 import ru.lab.librarydocker.exception.ResourceNotFoundException;
 import ru.lab.librarydocker.repository.ReaderRepository;
 import ru.lab.librarydocker.service.impl.ReaderServiceImpl;
-import ru.lab.librarydocker.utils.ValidationUtils;
 
-import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 

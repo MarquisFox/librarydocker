@@ -1,4 +1,5 @@
 package ru.lab.librarydocker.repository;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,7 +8,6 @@ import org.springframework.context.annotation.Import;
 import org.springframework.jdbc.core.JdbcTemplate;
 import ru.lab.librarydocker.entity.Author;
 import ru.lab.librarydocker.mapper.AuthorMapper;
-import ru.lab.librarydocker.repository.BaseRepositoryTest;
 import ru.lab.librarydocker.repository.impl.AuthorRepositoryImpl;
 
 import java.time.LocalDate;

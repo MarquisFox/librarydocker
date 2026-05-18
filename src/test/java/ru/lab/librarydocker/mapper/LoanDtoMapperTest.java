@@ -30,7 +30,7 @@ class LoanDtoMapperTest {
         assertThat(response.getDueDate()).isEqualTo("2025-01-15");
         assertThat(response.getReturnDate()).isEqualTo("2025-01-10");
         assertThat(response.getStatusId()).isEqualTo(1L);
-        // joined fields remain null
+
         assertThat(response.getBookTitle()).isNull();
         assertThat(response.getReaderFullName()).isNull();
         assertThat(response.getStatusName()).isNull();

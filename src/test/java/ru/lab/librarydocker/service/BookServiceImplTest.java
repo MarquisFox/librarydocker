@@ -13,7 +13,6 @@ import ru.lab.librarydocker.exception.ResourceNotFoundException;
 import ru.lab.librarydocker.repository.AuthorRepository;
 import ru.lab.librarydocker.repository.BookRepository;
 import ru.lab.librarydocker.service.impl.BookServiceImpl;
-import ru.lab.librarydocker.utils.ValidationUtils;
 
 import java.util.List;
 import java.util.Optional;

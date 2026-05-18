@@ -1,4 +1,5 @@
 package ru.lab.librarydocker.utils;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
@@ -17,7 +18,6 @@ class SqlUtilsTest {
     @Mock
     private ResultSet rs;
 
-    // ---------- getLong ----------
     @Test
     void getLong_shouldReturnLongValue_whenColumnExistsAndNotNull() throws SQLException {
         when(rs.getLong("col")).thenReturn(123L);
@@ -38,7 +38,6 @@ class SqlUtilsTest {
         assertThat(result).isNull();
     }
 
-    // ---------- getInt ----------
     @Test
     void getInt_shouldReturnIntValue_whenColumnExistsAndNotNull() throws SQLException {
         when(rs.getInt("col")).thenReturn(42);
@@ -59,7 +58,6 @@ class SqlUtilsTest {
         assertThat(result).isNull();
     }
 
-    // ---------- getLocalDate ----------
     @Test
     void getLocalDate_shouldReturnLocalDate_whenColumnExistsAndNotNull() throws SQLException {
         java.sql.Date sqlDate = java.sql.Date.valueOf("2025-03-25");

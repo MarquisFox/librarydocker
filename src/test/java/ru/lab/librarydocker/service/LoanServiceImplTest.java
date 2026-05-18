@@ -25,7 +25,8 @@ import java.util.Optional;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 class LoanServiceImplTest {
@@ -165,7 +166,7 @@ class LoanServiceImplTest {
         loan.setId(10L);
         loan.setBookId(1L);
         loan.setReturnDate(null);
-        loan.setStatusId(1L); // ACTIVE
+        loan.setStatusId(1L);
 
         LoanStatus active = new LoanStatus();
         active.setId(1L);
@@ -207,7 +208,7 @@ class LoanServiceImplTest {
     void returnBook_shouldThrow_whenLoanNotActive() {
         Loan loan = new Loan();
         loan.setReturnDate(null);
-        loan.setStatusId(5L); // not active
+        loan.setStatusId(5L);
         when(loanRepository.findById(10L)).thenReturn(Optional.of(loan));
         LoanStatus active = new LoanStatus();
         active.setId(1L);

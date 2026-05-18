@@ -1,11 +1,13 @@
 package ru.lab.librarydocker.utils;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
 public final class SqlUtils {
 
-    private SqlUtils() {}
+    private SqlUtils() {
+    }
 
     public static Long getLong(ResultSet rs, String columnName) throws SQLException {
         long value = rs.getLong(columnName);

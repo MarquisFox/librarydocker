@@ -10,7 +10,6 @@ import ru.lab.librarydocker.dto.response.BookResponse;
 import ru.lab.librarydocker.entity.Book;
 import ru.lab.librarydocker.mapper.BookMapper;
 import ru.lab.librarydocker.mapper.BookWithAuthorMapper;
-import ru.lab.librarydocker.repository.BaseRepositoryTest;
 import ru.lab.librarydocker.repository.impl.BookRepositoryImpl;
 
 import java.util.List;

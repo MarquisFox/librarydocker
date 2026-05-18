@@ -1,4 +1,5 @@
 package ru.lab.librarydocker.utils;
+
 import org.junit.jupiter.api.Test;
 import ru.lab.librarydocker.exception.BusinessException;
 
@@ -53,7 +54,6 @@ class ValidationUtilsTest {
                 .hasMessageContaining("Invalid ISBN format");
     }
 
-    // ---------- Email validation ----------
     @Test
     void validateEmail_shouldDoNothing_whenEmailIsNull() {
         assertThatCode(() -> ValidationUtils.validateEmail(null))

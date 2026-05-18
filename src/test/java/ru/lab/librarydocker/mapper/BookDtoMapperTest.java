@@ -72,7 +72,6 @@ class BookDtoMapperTest {
         assertThat(response.getPublishedYear()).isEqualTo(1877);
         assertThat(response.getIsbn()).isEqualTo("9780451524935");
         assertThat(response.getAvailableCopies()).isEqualTo(5);
-        // authorName is not set by this mapper
         assertThat(response.getAuthorName()).isNull();
     }
 }
