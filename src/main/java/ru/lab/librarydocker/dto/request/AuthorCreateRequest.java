@@ -11,9 +11,7 @@ public class AuthorCreateRequest {
     private LocalDate birthDate;
     private String biography;
 
-    public @NotBlank String getName() {
-        return name;
-    }
+    public @NotBlank String getName() {return name;}
 
     public void setName(@NotBlank String name) {
         this.name = name;
