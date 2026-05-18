@@ -3,7 +3,6 @@ package ru.lab.librarydocker.dto.request;
 import jakarta.validation.constraints.NotBlank;
 
 import java.time.LocalDate;
-import java.util.List;
 
 public class AuthorCreateRequest {
     @NotBlank
@@ -12,9 +11,9 @@ public class AuthorCreateRequest {
     private LocalDate birthDate;
     private String biography;
 
-    public @NotBlank String getName() {{
+    public @NotBlank String getName() {
         return name;
-    }}
+    }
 
     public void setName(@NotBlank String name) {
         this.name = name;
