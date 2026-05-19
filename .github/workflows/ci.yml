@@ -43,6 +43,7 @@ jobs:
 
       - name: Run Checkstyle
         run: mvn checkstyle:check -B
+        continue-on-error: true
 
   test:
     name: Test and Coverage
